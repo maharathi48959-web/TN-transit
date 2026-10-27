@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TN Transmit | Driver Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand brand-link" href="{{ url_for('index') }}">
+    <div class="brandmark">TN</div>
+    <div><strong>TN TRANSMIT</strong><span>DRIVER DASHBOARD</span></div>
+  </a>
+  <div class="topmeta">
+    <span class="live-dot"></span>
+    <span>DRIVER ALERTS</span>
+    <a class="btn secondary" href="{{ url_for('index') }}">Back to Authority Dashboard</a>
+  </div>
+</header>
+<main class="driver-shell">
+  <section class="page-head">
+    <div>
+      <p class="eyebrow">VEHICLE OPERATIONS / TAMIL NADU</p>
+      <h1>Driver <em>Dashboard</em></h1>
+      <p class="sub">Live authority updates for the selected registered vehicle.</p>
+    </div>
+  </section>
+
+  <section class="panel driver-toolbar">
+    <label for="vehicleSelect">Registered vehicle</label>
+    <select id="vehicleSelect" aria-describedby="vehicleHelp">
+      <option value="">Loading vehicles…</option>
+    </select>
+    <p id="vehicleHelp" class="driver-help">Choose the vehicle assigned to you to view its alerts.</p>
+    <p id="driverIdentity" class="driver-identity" aria-live="polite"></p>
+  </section>
+
+  <div id="driverNotice" class="driver-notice" role="status" aria-live="polite" hidden></div>
+
+  <section class="panel" aria-labelledby="driverAlertsHeading">
+    <div class="panel-head">
+      <div>
+        <h2 id="driverAlertsHeading">Vehicle alerts</h2>
+        <p>Authority status changes refresh automatically.</p>
+      </div>
+      <button id="refreshDriverAlerts" class="btn secondary" type="button">Refresh</button>
+    </div>
+    <div id="driverAlerts" class="driver-alert-list" aria-live="polite">
+      <p class="empty">Loading vehicle alerts…</p>
+    </div>
+  </section>
+
+  <p class="driver-safety-note">Vehicle selection routes alerts by registered bus number. It is not driver authentication; verify driver identity through an approved sign-in process before operational deployment.</p>
+  <footer>TN Transmit Smart Crowd AI · Transport Authority prototype</footer>
+</main>
+<script>window.initialDriverVehicle = {{ vehicle_id|tojson }};</script>
+<script src="{{ url_for('static', filename='driver.js') }}"></script>
+</body>
+</html>

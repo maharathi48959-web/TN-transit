@@ -1,0 +1,270 @@
+.layout {
+  align-items: stretch;
+}
+
+.sidebar,
+.main,
+.panel,
+.stat,
+.panel-head > div {
+  min-width: 0;
+}
+
+.stats,
+.two-col {
+  align-items: stretch;
+}
+
+.panel-head {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.head-actions {
+  justify-content: flex-end;
+  max-width: 100%;
+}
+
+.table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.table-wrap table {
+  min-width: 980px;
+}
+
+.row-actions {
+  flex-wrap: wrap;
+}
+
+.row-actions .mini-btn {
+  white-space: nowrap;
+}
+
+.form-msg {
+  grid-column: 1 / -1;
+}
+
+.form-msg.error {
+  color: #cf354d;
+}
+
+.form-msg.success {
+  color: #07875f;
+}
+
+.btn:disabled,
+.mini-btn:disabled {
+  cursor: wait;
+  opacity: .6;
+}
+
+.brand-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.driver-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.driver-toolbar {
+  display: grid;
+  grid-template-columns: minmax(160px, .7fr) minmax(220px, 1.3fr);
+  align-items: center;
+  gap: 10px 18px;
+}
+
+.driver-toolbar label {
+  color: #526582;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.driver-toolbar select {
+  max-width: 520px;
+}
+
+.driver-help {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+.driver-identity {
+  grid-column: 1 / -1;
+  color: #526582;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+
+.driver-notice {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  border: 1px solid #dbe3ff;
+  border-radius: 12px;
+  background: #edf1ff;
+  color: #3854c9;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.driver-notice.success {
+  background: #e4f8ef;
+  border-color: #c9efdf;
+  color: #07875f;
+}
+
+.driver-notice.error {
+  background: #ffeaed;
+  border-color: #f1cbd1;
+  color: #cf354d;
+}
+
+.driver-notice[hidden] {
+  display: none;
+}
+
+.driver-alert-list {
+  display: grid;
+  gap: 14px;
+}
+
+.driver-alert {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #edf0f6;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.driver-alert-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.driver-alert-head .eyebrow {
+  margin-bottom: 6px;
+}
+
+.driver-alert h3 {
+  font: 700 16px Manrope, sans-serif;
+  margin: 0;
+}
+
+.driver-alert-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.driver-alert-details p {
+  min-width: 0;
+  margin: 0;
+}
+
+.driver-alert-details span,
+.driver-alert-details strong {
+  display: block;
+}
+
+.driver-alert-details span {
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.driver-alert-details strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.driver-alert-message {
+  margin: 16px 0 0;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f6f8fc;
+  color: #526582;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.driver-status-message {
+  margin: 14px 0 0;
+  padding: 11px 12px;
+  border-radius: 9px;
+  background: #fff2df;
+  color: #ad6b0b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.driver-status-message.ACKNOWLEDGED {
+  background: #edf0ff;
+  color: #4568f5;
+}
+
+.driver-status-message.RESOLVED {
+  background: #e4f8ef;
+  color: #07875f;
+}
+
+.driver-safety-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .head-actions {
+    justify-content: flex-start;
+  }
+
+  .row-actions {
+    min-width: 220px;
+  }
+
+  .driver-shell {
+    padding: 16px;
+  }
+
+  .driver-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .driver-help,
+  .driver-identity {
+    grid-column: 1;
+  }
+
+  .driver-alert-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .topmeta .btn {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 440px) {
+  .driver-alert-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .driver-alert-head {
+    align-items: center;
+  }
+}
